@@ -1,0 +1,12 @@
+[
+    {"keyword": "salam", "response": "Walaikumussalam, ada yang bisa saya bantu hari ini?"},
+    {"keyword": "halo", "response": "Halo! Ada yang bisa saya bantu hari ini?"},
+    {"keyword": "nama", "response": "Saya adalah Abdu. Chatbot yang siap membantu Anda mengetahui masjid ini"},
+    {"keyword": "terima kasih", "response": "Sama sama. Semoga harimu menyenangkan."},
+    {"keyword": "kamu", "response": "Saya adalah Abdu. Chatbot yang siap membantu Anda mengetahui masjid ini"},
+    {
+        "keyword": "ganti password",
+        "response": "Berikut langkah-langkah mengganti password di aplikasi ABC:\n\n1. **Buka Aplikasi ABC**\n   - Pastikan Anda sudah login ke akun Anda.\n\n2. **Masuk ke Pengaturan Akun**\n   - Klik ikon profil atau buka menu utama.\n   - Pilih opsi **Pengaturan** atau **Keamanan & Privasi**.\n\n3. **Pilih Opsi Ganti Password**\n   - Cari dan klik menu **Ubah Password**.\n\n4. **Masukkan Password Lama & Baru**\n   - Masukkan password lama Anda untuk verifikasi.\n   - Ketikkan password baru yang ingin digunakan.\n   - Konfirmasi ulang password baru.\n\n5. **Simpan Perubahan**\n   - Klik tombol **Simpan** atau **Ubah Password**.\n\n6. **Verifikasi Jika Diperlukan**\n   - Anda mungkin diminta memasukkan kode OTP yang dikirim ke email atau nomor HP Anda.\n   - Masukkan kode OTP untuk menyelesaikan proses.\n\n7. **Selesai**\n   - Jika berhasil, Anda akan mendapat notifikasi bahwa password telah diubah.\n   - Coba login dengan password baru untuk memastikan perubahan berhasil.\n\nJika mengalami kendala, coba gunakan fitur **Lupa Password** atau hubungi dukungan pelanggan aplikasi ABC."
+    }
+    
+]

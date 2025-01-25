@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Masjid</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+        
+        <style>
+            body { font-family: Arial, sans-serif; margin: 50px; }
+            #chatbox { width: 100%; max-width: 600px; margin: 0 auto; }
+            #messages { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+            #input { width: 100%; padding: 10px; box-sizing: border-box; }
+            .user { color: rgb(0, 0, 53); }
+            .bot { color: rgb(17, 172, 100); }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Topbar start -->
+        <div class="container-fluid fixed-top">
+            <div class="container topbar d-none d-lg-block">
+                <div class="topbar-inner">
+                    <div class="row gx-0">
+                        <div class="col-lg-7 text-start">
+                        </div>
+                        <div class="col-lg-5 text-end">
+                            <div class="h-100 d-inline-flex align-items-center">
+                                <!-- <span class="text-body">Follow Us:</span> -->
+                                <a class="text-dark px-2" href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                                <a class="text-dark px-2" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                                <a class="text-dark px-2" href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
+                                <a class="text-dark px-2" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+
+        <!-- Hero Start -->
+        <div class="container-fluid hero-header">   
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-header-inner animated zoomIn">
+                            <p class="fs-4 text-dark" style="text-align: center;">Selamat Datang di Masjid</p>
+                            <h1 class=" mb-5 text-dark" style="text-align: center;">Tingkatkan Taqwa Sucikan Hati</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->   <!-- Sermon End -->
+
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="chatbox" class="card">
+                            <div id="messages" class="card-body" style="height: 300px; overflow-y: scroll;"></div>
+                            <div class="card-footer">
+                                <input id="input" type="text" class="form-control" placeholder="Tanya sesuatu...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-4">
+                <div class="border-top border-secondary pb-4"></div>
+                <div class="row">
+                    <div class="col-md-6 text-center text-light text-md-start mb-3 mb-md-0">
+                        &copy; Masjid, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+        
+    <script>
+        const inputBox = document.getElementById('input');
+        const messagesDiv = document.getElementById('messages');
+
+        inputBox.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const userMessage = inputBox.value;
+                if (userMessage.trim() !== '') {
+                    appendMessage('user', userMessage.toLowerCase());
+                    inputBox.value = '';
+
+                    fetch('/get', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'msg=' + encodeURIComponent(userMessage),
+                    })
+                    .then(response => response.text())
+                    .then(botMessage => {
+                        appendMessage('bot', botMessage);
+                    });
+                }
+            }
+        });
+
+        function appendMessage(sender, message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = sender;
+            messageDiv.textContent = message;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+    </body>
+
+</html>
